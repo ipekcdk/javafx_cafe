@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AnaMenuController">
+   <children>
+      <TabPane layoutX="150.0" layoutY="14.0" prefHeight="650.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="      Menü         ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" onMouseClicked="#makarna_Click" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.29797979797979796, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5" layoutX="-5.0" prefHeight="112.0" prefWidth="810.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" />
+                              <ImageView fx:id="tatli" fitHeight="120.0" fitWidth="119.0" onMouseClicked="#tatli_Click">
+                                 <image>
+                                    <Image url="@../../../5.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="sicakicecek" fitHeight="137.0" fitWidth="119.0" onMouseClicked="#sicakicecek_Click">
+                                 <image>
+                                    <Image url="@../../../2.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="sogukicecek" fitHeight="125.0" fitWidth="116.0" onMouseClicked="#sogukicecek_Click">
+                                 <image>
+                                    <Image url="@../../../3.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="fastfood" fitHeight="163.0" fitWidth="156.0" onMouseClicked="#fastfood_Click">
+                                 <image>
+                                    <Image url="@../../../4.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="makarna" fitHeight="118.0" fitWidth="126.0" onMouseClicked="#makarna_Click">
+                                 <image>
+                                    <Image url="@../../../1.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="salata" fitHeight="136.0" fitWidth="125.0" onMouseClicked="#salata_Click">
+                                 <image>
+                                    <Image url="@../../../Adsız%20tasarım.png" />
+                                 </image>
+                              </ImageView>
+                          </items>
+                        </SplitPane>
+                        <TableView fx:id="tableview_urunlerMenu" layoutX="-5.0" layoutY="165.0" onMouseClicked="#tableview_menu_Click" prefHeight="458.0" prefWidth="518.0">
+                          <columns>
+                            <TableColumn fx:id="col_id" prefWidth="76.80001831054688" text="UrunID" />
+                            <TableColumn fx:id="col_ad" prefWidth="157.60000610351562" text="Urun Adı" />
+                              <TableColumn fx:id="col_kategori" prefWidth="150.4000244140625" text="Urun Kategori" />
+                              <TableColumn fx:id="col_fiyat" prefWidth="132.79998779296875" text="Urun Fiyat" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="urunAra" layoutX="551.0" layoutY="196.0" onAction="#urunAraClick" onKeyPressed="#urunAraPress" prefHeight="26.0" prefWidth="191.0" promptText="Ürün Ara..." />
+                        <Label layoutX="533.0" layoutY="291.0" prefHeight="20.0" prefWidth="100.0" text="Seçilen Ürün:">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="532.0" layoutY="330.0" prefHeight="20.0" prefWidth="110.0" text="Ürün Kategori:">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="sepeteEkle" layoutX="573.0" layoutY="410.0" mnemonicParsing="false" onAction="#sepeteEkle_Click" prefHeight="42.0" prefWidth="117.0" text="Sepete Ekle">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="533.0" layoutY="365.0" prefHeight="18.0" prefWidth="48.0" text="Fiyat:">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbl_secilenUrun" layoutX="663.0" layoutY="291.0">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbl_secilenKategori" layoutX="662.0" layoutY="330.0">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbl_secilenFiyat" layoutX="663.0" layoutY="365.0">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                        </Label>
+                        <Line endX="133.199951171875" layoutX="632.0" layoutY="262.0" startX="-100.0" stroke="#7e7676" />
+                        <Line endX="133.199951171875" layoutX="636.0" layoutY="481.0" startX="-100.0" stroke="#716b6b" />
+                        <ImageView fitHeight="164.0" fitWidth="164.0" layoutX="571.0" layoutY="471.0">
+                           <image>
+                              <Image url="@../../../logo.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="34.0" fitWidth="45.0" layoutX="694.0" layoutY="192.0">
+                           <image>
+                              <Image url="@../../../Adsız%20tasarım%20(1).png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="78.0" fitWidth="84.0" layoutX="697.0" layoutY="387.0">
+                           <image>
+                              <Image url="@../../../Adsız%20tasarım%20(5).png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="         Sepetim        ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.6003225806451612" layoutX="145.0" layoutY="178.0" orientation="VERTICAL" prefHeight="621.6" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <TableView fx:id="tableview_urunlerSepetim" layoutX="82.0" layoutY="45.0" prefHeight="368.0" prefWidth="799.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                      <columns>
+                                        <TableColumn fx:id="col_idsepet" prefWidth="75.0" text="Urun ID" />
+                                        <TableColumn fx:id="col_adsepet" prefWidth="157.60003662109375" text="Urun Adı" />
+                                          <TableColumn fx:id="col_kategorisepet" minWidth="0.0" prefWidth="160.8000030517578" text="Urun Kategori" />
+                                          <TableColumn fx:id="col_fiyatsepet" prefWidth="110.39996337890625" text="Urun Fiyat" />
+                                      </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="269.0" prefWidth="799.0">
+                                 <children>
+                                    <ImageView fitHeight="187.0" fitWidth="189.0" layoutX="28.0" layoutY="19.0">
+                                       <image>
+                                          <Image url="@../../../logo.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="324.0" fitWidth="338.0" layoutX="542.0" layoutY="-79.0">
+                                       <image>
+                                          <Image url="@../../../Adsız%20tasarım%20(6).png" />
+                                       </image>
+                                    </ImageView>
+                                    <Button fx:id="btn_siparisver" layoutX="609.0" layoutY="168.0" mnemonicParsing="false" onAction="#btn_siparisver_Click" prefHeight="49.0" prefWidth="122.0" text="Sipariş Ver">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Button>
+                                    <Label layoutX="249.0" layoutY="97.0" text="Toplam Tutar:">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="toptutar" layoutX="386.0" layoutY="97.0" prefHeight="22.0" prefWidth="58.0">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="18.0" />
+                                       </font></Label>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="      Hesap Bilgilerim     ">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="573.0" layoutY="408.0">
+                           <image>
+                              <Image url="@../../../logo.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="344.0" layoutY="139.0" text="Kullanıcı ID:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="344.0" layoutY="185.0" text="Kullanıcı Adı:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="344.0" layoutY="231.0" text="Şifre:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="344.0" layoutY="279.0" text="Yetki:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txt_id" editable="false" layoutX="450.0" layoutY="130.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txt_kul" editable="false" layoutX="451.0" layoutY="177.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txt_sifre" editable="false" layoutX="451.0" layoutY="223.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txt_yetki" editable="false" layoutX="451.0" layoutY="270.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <Line endX="337.199951171875" layoutX="370.0" layoutY="85.0" startX="-277.20001220703125" />
+                        <Line endX="383.5999755859375" layoutX="319.0" layoutY="357.0" startX="-227.60000610351562" />
+                        <Label layoutX="314.0" layoutY="49.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="326.0" fitWidth="342.0" layoutX="70.0" layoutY="48.0">
+                           <image>
+                              <Image url="@../../../hesabım.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="     Ayarlar     ">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="200.0" fitWidth="207.0" layoutX="547.0" layoutY="419.0">
+                           <image>
+                              <Image url="@../../../logo.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="302.0" layoutY="142.0" prefHeight="27.0" prefWidth="109.0" text="Eski Şifre:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="302.0" layoutY="192.0" text="Yeni Şifre:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="301.0" layoutY="243.0" text="Yeni Şifre (Tekrar):">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txt_eskisifre" layoutX="458.0" layoutY="134.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txt_yenisifre" layoutX="459.0" layoutY="185.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txt_yenisifretekrar" layoutX="459.0" layoutY="235.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txt_captcha" layoutX="459.0" layoutY="286.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </TextField>
+                        <ImageView fitHeight="297.0" fitWidth="300.0" layoutX="30.0" layoutY="69.0">
+                           <image>
+                              <Image url="@../../../şifredeğiş.png" />
+                           </image>
+                        </ImageView>
+                        <Line endX="505.199951171875" layoutX="186.0" layoutY="91.0" startX="-100.0" />
+                        <Line endX="505.199951171875" layoutX="186.0" layoutY="417.0" startX="-100.0" />
+                        <Button fx:id="btn_cikis" layoutX="126.0" layoutY="519.0" mnemonicParsing="false" onAction="#btn_cikis_Click" prefHeight="42.0" prefWidth="115.0" text="Çıkış Yap">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="16.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="degistir" layoutX="506.0" layoutY="343.0" mnemonicParsing="false" onAction="#btn_degistir_Click" prefHeight="49.0" prefWidth="105.0" text="Değiştir">
+                           <font>
+                              <Font name="Arial Bold" size="16.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="82.0" fitWidth="82.0" layoutX="59.0" layoutY="499.0">
+                           <image>
+                              <Image url="@../../../çıkış.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="lbl_dogrulama" layoutX="301.0" layoutY="291.0" prefHeight="29.0" prefWidth="122.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btn_dogrulama" layoutX="309.0" layoutY="333.0" mnemonicParsing="false" onAction="#btn_dogrulama_Click" text="Doğrula" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tab_yonetici" text="         Yönetici             ">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.1293548387096774" layoutX="361.0" layoutY="84.0" orientation="VERTICAL" prefHeight="621.6" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="152.0" prefWidth="799.0">
+                                 <children>
+                                    <RadioButton fx:id="radiob_urunler" layoutX="66.0" layoutY="18.0" mnemonicParsing="false" onAction="#choicebox_urunler_Click" prefHeight="42.0" prefWidth="158.0" text="Ürünleri Düzenle">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </RadioButton>
+                                    <RadioButton fx:id="radiob_kullanıcılar" layoutX="259.0" layoutY="26.0" mnemonicParsing="false" onAction="#choicebox_musteriler_Click" prefHeight="28.0" prefWidth="162.0" text="Kullanıcıları Düzenle">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                    </RadioButton>
+                                    <ImageView fitHeight="104.0" fitWidth="131.0" layoutX="653.0" layoutY="-13.0">
+                                       <image>
+                                          <Image url="@../../../logo.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="502.0" prefWidth="799.0">
+                                 <children>
+                                    <TableView fx:id="tableview_urunler" onMouseClicked="#tableview_urunler_Click" prefHeight="537.0" prefWidth="476.0">
+                                      <columns>
+                                        <TableColumn fx:id="col_urunid" prefWidth="75.0" text="Urun ID" />
+                                        <TableColumn fx:id="col_urunad" prefWidth="142.4000244140625" text="Urun Adı" />
+                                          <TableColumn fx:id="col_urunkategori" minWidth="0.0" prefWidth="148.8000030517578" text="Urun Kategori" />
+                                          <TableColumn fx:id="col_urunfiyat" minWidth="0.0" prefWidth="111.199951171875" text="Urun Fiyat" />
+                                      </columns>
+                                    </TableView>
+                                    <Button fx:id="btn_ekle" layoutX="557.0" layoutY="299.0" mnemonicParsing="false" onAction="#btn_ekle_Click" prefHeight="50.0" prefWidth="150.0" text="EKLE">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="btn_sil" layoutX="558.0" layoutY="368.0" mnemonicParsing="false" onAction="#btn_sil_Click" prefHeight="50.0" prefWidth="150.0" text="SİL">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="btn_guncelle" layoutX="558.0" layoutY="440.0" mnemonicParsing="false" onAction="#btn_guncelle_Click" prefHeight="50.0" prefWidth="150.0" text="GÜNCELLE">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Label fx:id="lbl_id" layoutX="500.0" layoutY="58.0" prefHeight="18.0" prefWidth="90.0" text="id" />
+                                    <Label fx:id="lbl_ad" layoutX="500.0" layoutY="100.0" prefHeight="18.0" prefWidth="98.0" text="ad" />
+                                    <Label fx:id="lbl_uc" layoutX="500.0" layoutY="142.0" prefHeight="18.0" prefWidth="94.0" text="uc" />
+                                    <Label fx:id="lbl_dort" layoutX="500.0" layoutY="186.0" prefHeight="18.0" prefWidth="102.0" text="dort" />
+                                    <TextField fx:id="txt_idkul" layoutX="610.0" layoutY="54.0" />
+                                    <TextField fx:id="txt_ad" layoutX="611.0" layoutY="94.0" />
+                                    <TextField fx:id="txt_uc" layoutX="611.0" layoutY="136.0" />
+                                    <TextField fx:id="txt_dort" layoutX="611.0" layoutY="180.0" />
+                                    <Button fx:id="btn_yenile" layoutX="541.0" layoutY="232.0" mnemonicParsing="false" onAction="#btn_yenile_Click" prefHeight="23.0" prefWidth="58.0" text="Yenile">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="btn_temizle" layoutX="681.0" layoutY="233.0" mnemonicParsing="false" onAction="#btn_temizle_Click" text="Temizle">
+                                       <font>
+                                          <Font name="Arial Rounded MT Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <ImageView fitHeight="64.0" fitWidth="62.0" layoutX="507.0" layoutY="219.0">
+                                       <image>
+                                          <Image url="@../../../Adsız%20tasarım%20(3).png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fitHeight="45.0" fitWidth="43.0" layoutX="634.0" layoutY="221.0">
+                                       <image>
+                                          <Image url="@../../../Adsız%20tasarım%20(4).png" />
+                                       </image>
+                                    </ImageView>
+                                    <TableView fx:id="tableview_musteriler" layoutX="-12.0" layoutY="-2.0" onMouseClicked="#tableview_musteriler_Click" prefHeight="550.0" prefWidth="486.0">
+                                       <columns>
+                                          <TableColumn fx:id="col_kulid" prefWidth="104.79995441436768" text="Kullanıcı ID" />
+                                          <TableColumn fx:id="col_kulad" prefWidth="132.80001831054688" text="Kullanıcı Adı" />
+                                          <TableColumn fx:id="col_kulpass" minWidth="0.0" prefWidth="128.8000030517578" text="Kullanıcı Şifre" />
+                                          <TableColumn fx:id="col_yetki" minWidth="0.0" prefWidth="130.4000244140625" text="Yetki    " />
+                                       </columns>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
